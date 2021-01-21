@@ -1,4 +1,4 @@
-# my-sketch
+# hypocycloid
 
 A Quil sketch that draws hypocycloids (spirograph patterns).
 
