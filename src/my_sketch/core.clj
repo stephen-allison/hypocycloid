@@ -2,7 +2,11 @@
   (:require [quil.core :as q]
             [quil.middleware :as m]))
 
-(def PI 3.14159)
+
+;Play with these to get different patterns
+(def param-A 23)
+(def param-B 11)
+(def scale 7)
 
 (defn hypocycloid [a b scale]
   (fn [t]
@@ -12,7 +16,7 @@
 (defn draw []
   (q/with-translation [(/ (q/width) 2) (/ (q/height) 2 )]
     (let [t (/ (q/frame-count) 20)
-          f (hypocycloid 23 13 11)]
+          f (hypocycloid param-A param-B scale)]
       (q/line (f t) (f (+ t 0.1))))))
 
 (defn setup []
@@ -23,3 +27,4 @@
   :size [512 512]
   :draw draw
   :setup setup)
+
